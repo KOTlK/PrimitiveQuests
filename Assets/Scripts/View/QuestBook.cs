@@ -19,7 +19,7 @@ namespace PrimitiveQuests.View
                 if (_spawnedQuests.ContainsKey(quest))
                 {
                     quest.DrawStages(_spawnedQuests[quest]);
-                    return;
+                    continue;
                 }
 
                 var obj = InstantiateNewQuest();
