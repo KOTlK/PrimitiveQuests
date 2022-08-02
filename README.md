@@ -1,7 +1,4 @@
-# PrimitiveQuests
-# **_Work In Progress_**
-
-## Simple quest system implementation.
+# PrimitiveQuests (**_Work In Progress_**)
 
 # **Usage**
 
