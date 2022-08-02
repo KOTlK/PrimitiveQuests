@@ -13,6 +13,11 @@ namespace View
         private readonly Dictionary<IStage, Stage> _spawnedStages = new();
 
 
+        public void UpdateQuest(IQuest quest)
+        {
+            Debug.Log(quest.Name + " - " + quest.Description);
+        }
+        
         public void UpdateStages(IEnumerable<IStage> stages)
         {
             foreach (var stage in stages)

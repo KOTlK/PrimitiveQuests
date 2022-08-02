@@ -50,9 +50,10 @@ namespace PrimitiveQuests
             Stages[index].Complete();
         }
 
-        public void DrawStages(IQuestView view)
+        public void Draw(IQuestView view)
         {
             view.UpdateStages(Stages);
+            view.UpdateQuest(this);
         }
     }
 }

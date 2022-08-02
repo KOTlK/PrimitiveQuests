@@ -1,10 +1,10 @@
 ﻿using PrimitiveQuests.View;
+using View;
 
 namespace PrimitiveQuests
 {
-    public interface IQuestBook
+    public interface IQuestBook : IDrawable<IQuestBookView>
     {
         void Add(IQuest quest);
-        void Draw(IQuestBookView view);
     }
 }

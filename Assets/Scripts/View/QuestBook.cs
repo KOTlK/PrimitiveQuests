@@ -18,13 +18,13 @@ namespace PrimitiveQuests.View
             {
                 if (_spawnedQuests.ContainsKey(quest))
                 {
-                    quest.DrawStages(_spawnedQuests[quest]);
+                    quest.Draw(_spawnedQuests[quest]);
                     continue;
                 }
 
                 var obj = InstantiateNewQuest();
                 _spawnedQuests.Add(quest, obj);
-                quest.DrawStages(obj);
+                quest.Draw(obj);
             }
         }
 
