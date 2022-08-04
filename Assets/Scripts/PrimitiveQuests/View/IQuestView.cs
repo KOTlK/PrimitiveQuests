@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using PrimitiveQuests;
 
-namespace View
+namespace PrimitiveQuests.View
 {
     public interface IQuestView
     {

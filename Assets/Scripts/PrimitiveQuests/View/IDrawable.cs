@@ -1,4 +1,4 @@
-﻿namespace View
+﻿namespace PrimitiveQuests.View
 {
     public interface IDrawable<in TView>
     {

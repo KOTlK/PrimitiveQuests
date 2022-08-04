@@ -1,4 +1,4 @@
-﻿using View;
+﻿using PrimitiveQuests.View;
 
 namespace PrimitiveQuests
 {

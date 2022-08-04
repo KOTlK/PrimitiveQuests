@@ -1,6 +1,4 @@
-﻿using View;
-
-namespace PrimitiveQuests
+﻿namespace PrimitiveQuests
 {
     public interface IStage : IAccomplishable, IDescribable
     {

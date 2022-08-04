@@ -2,6 +2,7 @@
 {
     public interface IWindow
     {
+        bool IsActive { get; }
         void Open();
         void Close();
     }

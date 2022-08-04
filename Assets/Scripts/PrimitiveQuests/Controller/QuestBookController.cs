@@ -12,16 +12,26 @@ namespace PrimitiveQuests
             _questBook = questBook;
             _questBookView = questBookView;
         }
+        
+        public bool IsActive => _questBookView.IsActive;
 
         public void Add(IQuest quest)
         {
             _questBook.Add(quest);
-            UpdateBook();
+            UpdateView();
         }
 
-        public void UpdateBook()
+        public void UpdateView()
         {
             _questBook.Draw(_questBookView);
         }
+
+        public void Open()
+        {
+            _questBookView.Open();
+            UpdateView();
+        }
+
+        public void Close() => _questBookView.Close();
     }
 }

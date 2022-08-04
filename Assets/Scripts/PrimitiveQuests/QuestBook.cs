@@ -4,7 +4,7 @@ using PrimitiveQuests.View;
 
 namespace PrimitiveQuests
 {
-    public class QuestBook : IQuestBook
+    public sealed class QuestBook : IQuestBook
     {
         private readonly List<IQuest> _quests;
 
@@ -22,6 +22,7 @@ namespace PrimitiveQuests
                 throw new ArgumentException($"{nameof(quest)} is already exist", nameof(quest));
 
             _quests.Add(quest);
+            quest.StartQuest();
         }
 
         public void Draw(IQuestBookView view)

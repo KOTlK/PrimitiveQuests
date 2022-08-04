@@ -1,9 +1,9 @@
 ﻿using System;
-using View;
+using PrimitiveQuests.View;
 
 namespace PrimitiveQuests
 {
-    public class Quest : IQuest
+    public sealed class Quest : IQuest
     {
         private readonly IStage[] _stages;
 

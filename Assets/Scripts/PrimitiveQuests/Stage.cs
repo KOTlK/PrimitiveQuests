@@ -23,18 +23,22 @@ namespace PrimitiveQuests
             Name = name;
             Description = description;
         }
+        public Stage()
+        {
+            // Constructor for inheritors
+        }
         
-        public string Name { get; }
-        public string Description { get; }
+        public virtual string Name { get; }
+        public virtual string Description { get; }
 
-        public void Begin()
+        public virtual void Begin()
         {
             if (Completed) throw new Exception("The stage is already completed");
             Completed = false;
             _onBegin?.Invoke();
         }
 
-        public void Complete()
+        public virtual void Complete()
         {
             if (Completed) throw new Exception("The stage is already completed");
             Completed = true;
