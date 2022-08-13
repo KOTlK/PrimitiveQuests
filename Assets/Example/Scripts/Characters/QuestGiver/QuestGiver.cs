@@ -1,5 +1,6 @@
 ﻿using Example.Scripts.Characters.Animation;
 using PrimitiveQuests;
+using TMPro;
 using UnityEngine;
 
 namespace Example.Scripts.Characters.QuestGiver
@@ -7,6 +8,7 @@ namespace Example.Scripts.Characters.QuestGiver
     public class QuestGiver : MonoBehaviour, IInteractableCharacter
     {
         [SerializeField] private float _speed = 5f;
+        [SerializeField] private TMP_Text _hint;
         
         private Rigidbody2D _rigidbody;
         private Animator _animator;
@@ -59,6 +61,7 @@ namespace Example.Scripts.Characters.QuestGiver
             if (other.TryGetComponent(out IPlayer player))
             {
                 _player = player;
+                ShowHint();
             }
         }
 
@@ -67,7 +70,18 @@ namespace Example.Scripts.Characters.QuestGiver
             if (other.TryGetComponent(out IPlayer player))
             {
                 _player = null;
+                HideHint();
             }
+        }
+        
+        private void ShowHint()
+        {
+            _hint.gameObject.SetActive(true);
+        }
+
+        private void HideHint()
+        {
+            _hint.gameObject.SetActive(false);
         }
     }
 }

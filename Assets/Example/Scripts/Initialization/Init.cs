@@ -28,13 +28,7 @@ namespace Example.Scripts.Initialization
                     new QuestBook(),
                     _questBook));
 
-            questGiver.Init("QuestGiver", new Quest(
-                new IStage[]
-                {
-                    new ChopThreeTrees(trees)
-                },
-                "Trees Chopper",
-                "Chop trees until the quest is done"));
+            questGiver.Init("QuestGiver", new ChopTrees(trees));
         }
     }
 }
