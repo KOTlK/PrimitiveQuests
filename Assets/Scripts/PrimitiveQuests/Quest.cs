@@ -3,16 +3,19 @@ using PrimitiveQuests.View;
 
 namespace PrimitiveQuests
 {
-    public sealed class Quest : IQuest
+    public class Quest : IQuest
     {
-        private readonly IStage[] _stages;
+        protected virtual IStage[] _stages { get; set; }
 
         private int _currentStage = 0;
         
         private const string NoName = "No Name";
         private const string NoDescription = "No Description";
 
-        
+
+        public Quest()
+        {
+        }
         public Quest(IStage[] stages, string name, string description) : this(stages)
         {
             Name = name;
@@ -27,9 +30,9 @@ namespace PrimitiveQuests
             Name = NoName;
             Description = NoDescription;
         }
-        
-        public string Name { get; }
-        public string Description { get; }
+
+        public virtual string Name { get; protected set; }
+        public virtual string Description { get; protected set; }
         public bool Completed => _stages[^1].Completed;
 
         public void StartQuest()
@@ -72,4 +75,5 @@ namespace PrimitiveQuests
             view.UpdateQuest(this);
         }
     }
+
 }
